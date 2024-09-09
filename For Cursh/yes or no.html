@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>😍 For Cursh 😍</title>
+</head>
+<body>
+    <div class="container">
+       
+        <div id="hidden-box">
+            <h5 style="padding-left: 5%;">Enter Your Name</h5>
+            <input type="text" id="txt" class="textbox">
+            <button class="close" onclick="hide()">ok</button>
+              <!-- <i class="fas fa-close" onclick="hide()"></i> -->
+              
+        </div>
+   <div class="wraper" id="game-container" >
+    
+   <img src="pngwing.com.png" alt="heart" class="fa-heart" onclick="show()">
+    <h2 class="quation">
+        
+        <i id="yes-hide">Do you love me ?</i> 
+        
+        
+        <span id="yes-show"><i class="far fa-face-kiss-wink-heart"></i> Love you soo much<i class="far fa-face-kiss-wink-heart"></i>
+         <p id="hii"><i class="fas fa-heart-crack"></i></p>
+        </span> 
+    
+        
+    </h2>
+    <div class="btn-group">
+        <button class="yes-btn" onclick="cl()">Yes</button>
+        <button class="no-btn" id="target">No</button>
+    </div>
+   </div> 
+
+</div>
+
+<script>
+
+
+    let target = document.getElementById('target');
+    let yes =  document.getElementById('yes');
+
+    function moveTarget(){
+        let maxwidth = 400;
+        let maxheight = 400;
+        let randomX = Math.floor(Math.random() * maxwidth);
+        let randomY = Math.floor(Math.random() * maxheight);
+
+        target.style.left = randomX + 'px';
+        target.style.top = randomY + 'px';
+    }; 
+
+    target.addEventListener("mouseenter",function(){ 
+        moveTarget();
+       
+    });
+
+    
+            
+       
+    function cl(){
+
+            let ent = document.getElementById('txt').value;
+           let hii = document.getElementById('hii').innerHTML=ent;
+        document.getElementById('yes-hide').style.display= 'none';
+        document.getElementById('yes-show').style.display='block';      
+    }
+
+
+    function show(){
+     let box = document.getElementById('hidden-box');
+     let show = document.getElementById('show');
+     let hide = document.getElementById('hide');
+
+      document.getElementById('hidden-box').style.display='block'
+    }
+    
+    function hide(){
+        let box = document.getElementById('hidden-box');
+     let show = document.getElementById('show');
+     let hide = document.getElementById('hide');
+
+      document.getElementById('hidden-box').style.display='none'
+    }
+
+</script>
+
+
+</body>
+</html>
